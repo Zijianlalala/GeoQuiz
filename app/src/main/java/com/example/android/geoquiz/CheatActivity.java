@@ -24,19 +24,19 @@ public class CheatActivity extends AppCompatActivity {
     private boolean mAnswerIsTrue;
     private Button mShowAnswer;
     private boolean mIsClicked;
-    //创建要传递的
+    //创建要传递的intent 在父Activity中调用
     public static Intent newIntent(Context context, boolean answerIsTrue) {
         Intent i = new Intent(context,CheatActivity.class);
         i.putExtra(EXTRA_ANSWER_IS_TRUE,answerIsTrue);
         return i;
     }
-    //设置返回父Activity的值
+    //设置返回父Activity的信息
     private void setAnswerShownResult(boolean isAnswerShown) {
         Intent data = new Intent();
         data.putExtra(EXTRA_ANSWER_SHOWN,isAnswerShown);
         setResult(RESULT_OK,data);
     }
-    //对返回给父Activity的Intent对象进行解析 解析为boolean类型
+    //对返回给父Activity的Intent对象进行解析 解析为boolean类型 在父Activity中调用
     public static boolean wasAnswerShown(Intent result) {
         return result.getBooleanExtra(EXTRA_ANSWER_SHOWN,false);
     }
@@ -68,7 +68,8 @@ public class CheatActivity extends AppCompatActivity {
                     mTextView.setText(R.string.button_false);
                 }
                 mIsClicked = true;
-                setAnswerShownResult(true);
+                setAnswerShownResult(mIsClicked);
+                //如果运行SDK版本大于LOLLIPOP 可以展示动画按钮
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     int cx = mShowAnswer.getWidth()/2;
                     int cy = mShowAnswer.getHeight()/2;
