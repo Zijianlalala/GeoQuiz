@@ -36,6 +36,7 @@ public class CheatActivity extends AppCompatActivity {
         data.putExtra(EXTRA_ANSWER_SHOWN,isAnswerShown);
         setResult(RESULT_OK,data);
     }
+    //对返回给父Activity的Intent对象进行解析 解析为boolean类型
     public static boolean wasAnswerShown(Intent result) {
         return result.getBooleanExtra(EXTRA_ANSWER_SHOWN,false);
     }
