@@ -1,0 +1,19 @@
+<resources>
+    <!--quiz的信息-->
+    <string name="app_name">GeoQuiz</string>
+    <string name="quiz_1">Is Beijing in China?</string>
+    <string name="quiz_2">Is Qingdao a beautiful city?</string>
+    <string name="quiz_3">Are you OK?</string>
+    <string name="warning_text">Are you sure you want to do this?</string>
+    <!--按钮的信息-->
+    <string name="button_true">TRUE</string>
+    <string name="button_false">FALSE</string>
+    <string name="button_next">NEXT</string>
+    <string name="button_back">BACK</string>
+    <string name="button_cheat">CHEAT</string>
+    <string name="button_show_answer">SHOW ANSWER</string>
+    <!--Toast的信息-->
+    <string name="correct_toast">CORRECT!</string>
+    <string name="incorrect_toast">INCORRECT!</string>
+    <string name="judge_toast">CHEATING IS WRONG!</string>
+</resources>
